@@ -1,31 +1,11 @@
-
-class DataBase{
-    private static String name = "dsadasdsa";
-    private static DataBase base;
-
-
-    public  static DataBase getInstance(){
-        if(base == null){
-            base = new DataBase();
-            return base;
-        }
-        return base;
-    }
-    public String getName(){
-        return name;
-    }
-    public void setName(String n){
-        name = n;
-    }
-}
-
 public class Main {
-    public static void main(String[] args){
-        DataBase dataBase1 = DataBase.getInstance();
-        DataBase dataBase2 = DataBase.getInstance();
-        DataBase dataBase3 = DataBase.getInstance();
-        DataBase dataBase4 = DataBase.getInstance();
-        DataBase dataBase5 = DataBase.getInstance();
-        System.out.println(dataBase1.equals(dataBase2));
+    public static void main(String[] args) {
+        Hero mider = new Mider();
+        Hero Hard_Support = new Hard_Support();
+        Hard_Support = new Force_Staff(Hard_Support );
+        mider = new Desolater(mider);
+        mider = new Travel_boots(mider);
+        System.out.println(mider.Items());
+        System.out.println(Hard_Support.Items());
     }
-}
+    }
