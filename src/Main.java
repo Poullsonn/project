@@ -1,9 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-        physicalDamage damage = new physicalDamage();
-        Hero hero = new Hero();
-        MagicalDamage magicalDamage = new DamageAdaptor(damage);
-        hero.attack(magicalDamage);
-        hero.attack(damage);
+        International TI = new International();
+
+        TI.addEvents("Team Spirit VS PSG.LGD");
+        TI.addEvents("Gladiators VS BetBoom");
+
+        IObserver subscriber1 = new Subscriber("Subscriber1");
+        IObserver subscriber2 = new Subscriber("Subscriber2");
+
+        TI.addObserver(subscriber1);
+        TI.addObserver(subscriber2);
+
+        TI.addEvents("Virtus Pro VS 9Pandas");
+        TI.removeEvents("Gladiators VS BetBoom");
+
+
     }
 }
